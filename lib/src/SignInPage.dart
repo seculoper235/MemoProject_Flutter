@@ -10,34 +10,7 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> with TickerProviderStateMixin {
-  // 애니메이션
-  late Tween<TextDecoration> _underlineTween;
-
-  late AnimationController _animationController;
-
-  double opacityLevel = 0.0;
-
-  void _changeOpacity() {
-    setState(() => opacityLevel = opacityLevel == 1 ? 0.0 : 1.0);
-  }
-
-  @override
-  void activate() {
-    _changeOpacity();
-    super.activate();
-  }
-
-
-  void _anim() {
-     _underlineTween = Tween<TextDecoration>(begin: TextDecoration.none, end: TextDecoration.underline);
-
-    _animationController = AnimationController(
-      duration: const Duration(milliseconds: 500),
-      vsync: this,
-    );
-
-    _animationController.forward();
-  }
+  // 애니메이션 효과 필요
 
   @override
   Widget build(BuildContext context) {
@@ -79,30 +52,24 @@ class _SignInPageState extends State<SignInPage> with TickerProviderStateMixin {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(top: 44),
-                        child: Text.rich(
+                        child: const Text.rich(
                             TextSpan(
                                 text: '그린캣 소프트의\n',
                                 children: [
-                                  WidgetSpan(
-                                      child: AnimatedOpacity(
-                                        opacity: opacityLevel = opacityLevel == 0 ? 1.0 : 0.0,
-                                        duration: const Duration(milliseconds: 500),
-                                        child: const Text(
-                                          '다양한 소식',
-                                          style: TextStyle(
-                                            fontFamily: 'SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.ttf',
-                                            fontWeight: FontWeight.w900,
-                                            decoration: TextDecoration.underline,
-                                          ),
-                                        ),
+                                  TextSpan(
+                                      text: '다양한 소식',
+                                      style: TextStyle(
+                                        fontFamily: 'SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.ttf',
+                                        fontWeight: FontWeight.w900,
+                                        decoration: TextDecoration.underline,
                                       ),
                                   ),
 
-                                  const TextSpan(text: '을 받아보세요!'),
+                                  TextSpan(text: '을 받아보세요!'),
                                 ]
                             ),
 
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: Color.fromRGBO(0, 0, 0, 0.95),
                               fontFamily: 'SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.ttf',
                               fontSize: 18,
