@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
             titleTextStyle: TextStyle(height: 20, color: Color.fromRGBO(52, 58, 64, 1.0), fontSize: 16),
             toolbarHeight: 69,
             centerTitle: true,
-        )
+        ),
       ),
       routes: signRoute,
     );
