@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:memo_project_flutter/src/Routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,9 +24,15 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        appBarTheme: const AppBarTheme(
+            color: Color.fromRGBO(244, 244, 244, 1.0),
+            shadowColor: Colors.white,
+            titleTextStyle: TextStyle(height: 20, color: Color.fromRGBO(52, 58, 64, 1.0), fontSize: 16),
+            toolbarHeight: 69,
+            centerTitle: true,
+        )
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: signRoute,
     );
   }
 }
@@ -102,6 +110,12 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/signIn');
+              },
+              child: const Text("로그인 화면으로"),
+            )
           ],
         ),
       ),
