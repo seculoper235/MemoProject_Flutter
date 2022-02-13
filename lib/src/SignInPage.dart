@@ -19,6 +19,7 @@ class _SignInPageState extends State<SignInPage> with TickerProviderStateMixin {
         title: Container(
             margin: const EdgeInsets.only(top: 9),
             child: const Text('로그인')),
+          titleTextStyle: const TextStyle(height: 20, color: Color.fromRGBO(52, 58, 64, 1.0), fontSize: 16),
         leading: IconButton(
           iconSize: 24,
           color: Colors.grey,
@@ -42,7 +43,7 @@ class _SignInPageState extends State<SignInPage> with TickerProviderStateMixin {
                   decoration: const BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage('background.jpeg'),
+                        image: AssetImage('assets/background.jpeg'),
                       )
                   ),
 
